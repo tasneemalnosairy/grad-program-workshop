@@ -1,0 +1,5 @@
+<div> Coupons Listing Page </div>
+<button (click)="navigateToCreateCoupon()"> Create Coupon </button>
+@for (coupon of coupons; track coupon.id) {
+    <app-coupon-card [coupon]="coupon" (deleteCouponEvent)="deleteCoupon($event)"></app-coupon-card>
+}

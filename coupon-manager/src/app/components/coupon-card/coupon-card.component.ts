@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { Coupon } from '../../models/coupon';
 @Component({
   selector: 'app-coupon-card',
   standalone: true,
@@ -9,4 +9,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './coupon-card.component.css'
 })
 export class CouponCardComponent {
+  @Input() coupon: Coupon | undefined;
+  @Output() deleteCouponEvent = new EventEmitter<Coupon>();
+  
+  deleteCoupon() {
+    console.log('delete coupon');
+    this.deleteCouponEvent.emit(this.coupon);
+  }
 }

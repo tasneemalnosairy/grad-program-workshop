@@ -1,0 +1,21 @@
+<p> Create Coupon Page </p>
+<form #createCouponForm="ngForm" (ngSubmit)="createCoupon()">
+    <div class="form-group">
+        <label for="title"> Title </label>
+        <input type="text" id="title" name="title" [(ngModel)]="coupon.title" minlength="3" maxlength="20">
+    </div>
+    <div class="form-group">
+        <label for="description"> Description </label>
+        <input type="text" id="description" name="description" [(ngModel)]="coupon.description">
+    </div>
+    <div class="form-group">
+        <label for="discount"> Discount </label>
+        <input type="number" id="discount" name="discount" [(ngModel)]="coupon.discount">
+    </div>
+    <div class="form-group">
+        <label for="code"> Code </label>
+        <input type="text" id="code" name="code" [(ngModel)]="coupon.code" required>
+    </div>
+
+    <button type="submit"> Create Coupon </button>
+</form>
